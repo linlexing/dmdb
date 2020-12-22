@@ -3,7 +3,7 @@ package dmdb
 import (
 	"database/sql"
 
-	"github.com/alexbrainman/odbc"
+	"github.com/linlexing/odbc"
 )
 
 var drv Driver

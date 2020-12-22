@@ -38,3 +38,11 @@ func (r *Rows) Next(dest []driver.Value) error {
 func (r *Rows) Close() error {
 	return r.r.Close()
 }
+
+//ColumnTypeDatabaseTypeName 附加的
+func (r *Rows) ColumnTypeDatabaseTypeName(index int) string {
+	if tr, ok := r.r.(driver.RowsColumnTypeDatabaseTypeName); ok {
+		return tr.ColumnTypeDatabaseTypeName(index)
+	}
+	return ""
+}
